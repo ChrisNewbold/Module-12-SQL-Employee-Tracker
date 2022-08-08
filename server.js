@@ -58,9 +58,7 @@ const addDepartment = () => {
 }
 // add a role
 const addRole = () => {
-
-    db.query('SELECT * FROM role', function (err, results) {
-
+    db.query('SELECT * FROM roles JOIN departments on departments.id = roles.department_id', function (err, results) {
         const role = results.map(({ id, name }) => ({
             name: name,
             value: id
@@ -69,18 +67,18 @@ const addRole = () => {
         inquirer.prompt([{
             type: 'input',
             name: 'name',
-            message: 'what is the name?'
+            message: 'what is the role name?'
         },
         {
             type: 'input',
             name: 'salary',
-            message: 'what is the salary?'
+            message: 'what is the role salary?'
         },
         {
             type: 'list',
             name: 'department_id',
-            message: 'what is the department?',
-            choices: departments
+            message: 'what is the department the role belongs to?',
+            choices: role
         }
         ]).then(result => {
             console.table(result)
@@ -89,11 +87,10 @@ const addRole = () => {
             })
         })
     });
-
 }
 // add an employee
 const addEmployee = () => {
-    db.query('SELECT * FROM roles', function (err, results) {
+    db.query('SELECT * FROM roles JOIN roles on roles.id = employees.role_id', function (err, results) {
         const roles = results.map(({ id, title }) => ({
             name: title,
             value: id
