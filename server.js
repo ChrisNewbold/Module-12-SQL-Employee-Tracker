@@ -59,9 +59,9 @@ const addDepartment = () => {
 // add a role
 const addRole = () => {
 
-    db.query('SELECT * FROM departments', function (err, results) {
+    db.query('SELECT * FROM role', function (err, results) {
 
-        const departments = results.map(({ id, name }) => ({
+        const role = results.map(({ id, name }) => ({
             name: name,
             value: id
         }))
