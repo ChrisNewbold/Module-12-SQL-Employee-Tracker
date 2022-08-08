@@ -48,8 +48,11 @@ THEN I am prompted to select an employee to update and their new role and this i
 ## Mock-Up
 
 Please find GIF of walk through below
+
 ![working example gif](./assets/working%20example.gif)
+
 Please find MP4 of walk through below
+
 [click here for mp4](https://drive.google.com/file/d/1JZMOLr526BT8kHrN0OcJo-6z5yrlYN5A/view)
 
 ## Skills Used
