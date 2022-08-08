@@ -11,15 +11,34 @@ const viewAllDep = () => {
 }
 // view all roles
 const viewAllRoles = () => {
-    db.query('SELECT * FROM roles', function (err, results) {
-        console.table(results);
+    db.query('SELECT * FROM roles JOIN departments on departments.id = roles.department_id', function (err, results) {
+        const roles = results.map(result => {
+            return {
+                id: result.id,
+                title: result.title,
+                salary: result.salary,
+                department: result.name
+            }
+        })
+        console.table(roles);
         startPrompt();
     });
 }
 // view all employees
 const viewAllEmployees = () => {
-    db.query('SELECT * FROM employees', function (err, results) {
-        console.table(results);
+    db.query('SELECT * FROM employees JOIN roles on roles.id = employees.role_id', function (err, results) {
+        const employees = results.map(result => {
+            return {
+                id: result.id,
+                first_name: result.first_name,
+                last_name: result.last_name,
+                role: result.title,
+                departments: result.department_id,
+                salary: result.salary,
+                manager: result.manager
+            }
+        })
+        console.table(employees);
         startPrompt();
     });
 }
