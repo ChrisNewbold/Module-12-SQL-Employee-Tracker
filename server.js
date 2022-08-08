@@ -58,7 +58,7 @@ const addDepartment = () => {
 }
 // add a role
 const addRole = () => {
-    db.query('SELECT * FROM roles JOIN departments on departments.id = roles.department_id', function (err, results) {
+    db.query('SELECT * FROM departments', function (err, results) {
         const role = results.map(({ id, name }) => ({
             name: name,
             value: id
@@ -90,7 +90,7 @@ const addRole = () => {
 }
 // add an employee
 const addEmployee = () => {
-    db.query('SELECT * FROM roles JOIN roles on roles.id = employees.role_id', function (err, results) {
+    db.query('SELECT * FROM roles', function (err, results) {
         const roles = results.map(({ id, title }) => ({
             name: title,
             value: id
