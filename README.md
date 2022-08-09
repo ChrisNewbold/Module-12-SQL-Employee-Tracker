@@ -57,7 +57,13 @@ Please find MP4 of walk through below
 
 ## Skills Used
 
-MySQL
+• MySQL
+
+• node.js
+
+• inquirer
+
+• MySQL
 
 ## Credits
 
