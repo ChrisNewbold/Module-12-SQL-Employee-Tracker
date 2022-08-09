@@ -11,9 +11,9 @@
 
 ## My Task
 
-1. Modify starter code to create an application to write and save notes.
-2. Ensure the application uses Express.js back and that will save and retrieve note data from a JSON file.
-3. Deploy the entire application to Heroku.
+1. Build a command-line application
+2. Create useing node.js, inquirer, and MySQL
+3. Submit a screen recording and GitHub link
 
 ## User Story
 
